@@ -42,6 +42,80 @@ The **Ticket Fee** (ticketfee) is the fee that must be included in the ticket pu
 VSPs charge a fee for this service, which is paid upfront before the ticket is added to the VSPs voting wallets. This fee is generally 5% or less. A list of VSPs is maintained on dcrn.xyz. VSPs do not take custody of DCRN. By using them, you only delegate the voting rights of a ticket.
 
 
+**Calculation formula of Ticket Price**
+```
+ targetPoolSizeAll = votesPerBlock * (ticketPoolSize + ticketMaturity)
+
+                    curTicketPrice * curPoolSizeAll²
+ nextTicketPrice = -----------------------------------
+	              prevPoolSizeAll * targetPoolSizeAll
+
+```
+**Calculation formula of VSP Fee**
+```
+
+    1e4 * 542  /1000 = 5420     0.0000542 DCRN
+
+```
+
+**Calculation formula of Ticket Fee**
+```
+
+    1e4 * 298  /1000 = 2980     0.0000298 DCRN
+
+```
+**Calculation formula of Vote reward**
+```
+BlockSubsidy = 10 * 1e8
+    It changes every 6,144 blocks
+        BlockSubsidy = BlockSubsidy * 100
+        BlockSubsidy = BlockSubsidy / 101
+
+    ex: BlockSubsidy = 1000000000 10 DCRN
+    
+VoteSubsidy = BlockSubsidy * 3 / ( 10 * Number of votes ) // Number of votes is 5
+
+    ex: VoteSubsidy = 60000000  0.6 DCRN
+
+
+VSP Fees
+
+The vsp fee is calculated from the percentage given according to the
+following formula:
+
+           ps(v+z)
+    f = --------------
+             s+v
+
+    where f = absolute vsp fee as an amount
+          p = proportion (e.g. 0.5000 = 50.00%)
+          s = subsidy (adjusted two difficulty periods into the future)
+          v = price of the ticket
+          z = the ticket fees
+
+    This can be derived from the known relation that
+    ps = (f * (v+z)/(v+s)) obtained from the knowledge
+    that the outputs of the vote are the amounts
+    of the stake ticket plus subsidy (v+s) scaled by
+    the proportional input of the stake vsp fee
+    f/(v+z).
+
+f is then adjusted for the fact that at least one subsidy reduction is
+likely to occur before it can vote on a block.
+    ex: VSP Fees = 3408925  0.3408925 DCRN
+
+    ticket price + ticket fee = VSP Fees + Buyer = Total purchase of tickets
+    ex:  200000000 + 5420 = 3408925 + (196596495   1.96596495 DCRN) = 200005420
+
+buyer reward
+    Buyer * (vote subsidy + ticket price)  << 32 / Total purchase of tickets  >> 32
+    ex: 196596495 * ( 260000000 ) << 32 / 200005420  >> 32 = 255568517
+
+vsp reward
+    VSP Fees * (vote subsidy + ticket price)  << 32 / Total purchase of tickets  >> 32
+    ex: 3408925 * ( 260000000 ) << 32 / 200005420  >> 32 = 4431482
+```
+
 
 ## Ticket Lifecycle
 Purchasing a ticket is quite simple (see below), but what happens to it after you buy it? A ticket on mainnet (testnet uses different parameters) will go through a few stages in its lifetime:
