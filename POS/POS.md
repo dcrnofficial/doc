@@ -199,7 +199,7 @@ Weeks or months could elapse between a ticket being purchased and it being calle
 
 ## MyDcrn ticket buying process
 
-1. **Open the myDcrn program and enter the ticket buying page**
+1.**Open the myDcrn program and enter the ticket buying page**
 ![image](./img/buy_ticket.png "buy_ticket")
 
 2.**Enter the VSP website to register users**
