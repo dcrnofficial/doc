@@ -166,19 +166,19 @@
 
 ## dcrnd Setup Guide
 
-- **Start dcrd**
+- **Start dcrnd**
 
-  With the correctly set configuration files, open another shell window in your Decred directory . Type the command for Windows, macOS, and Linux are listed below:
+  With the correctly set configuration files, open another shell window in your Decred-Next directory . Type the command for Windows, macOS, and Linux are listed below:
 
   ```shell
-  Windows: dcrd.exe
-  macOS: ./dcrd
-  Linux: ./dcrd
+  Windows: dcrnd.exe
+  macOS: ./dcrnd
+  Linux: ./dcrnd
   ```
 
-- **Wait for dcrd to Sync to the Decred Blockchain**
+- **Wait for dcrnd to Sync to the Decred-Next Blockchain**
 
-  When `dcrd` launches successfully, you should see your shell window begin to fill up with messages as the daemon connects to the network and starts processing blocks. Wait until it is completed - the entire blockchain is being downloaded into the `dcrd` data directory.
+  When `dcrnd` launches successfully, you should see your shell window begin to fill up with messages as the daemon connects to the network and starts processing blocks. Wait until it is completed - the entire blockchain is being downloaded into the `dcrd` data directory.
 
   You will see a line at the start like this:
 
@@ -243,9 +243,9 @@
 
 - **Launching dcrwallet**
 
-  In order to launch `dcrwallet`, you first must have created your wallet and connected `dcrd` to the Decred network.
+  In order to launch `dcrwallet`, you first must have created your wallet and connected `dcrnd` to the Decred-Next network.
 
-  With the correctly set configuration files, open another shell window in your Decred directory (or use the last window if you have just created your wallet). Type the following command (review this guide’s Prerequisites to determine the right command for your OS/Shell application):
+  With the correctly set configuration files, open another shell window in your Decred-Next directory (or use the last window if you have just created your wallet). Type the following command (review this guide’s Prerequisites to determine the right command for your OS/Shell application):
 
   ```shell
   ./dcrwallet
@@ -271,7 +271,7 @@
 
 - **Prerequisites:**
 
-  1. Setup dcrd and have it running in the background.
+  1. Setup dcrnd and have it running in the background.
 
   2. Setup dcrwallet and have it running in the background.
 
@@ -334,14 +334,14 @@
   dcrctl --wallet sendtoaddress <address> <amount>
   ```
 
-  If successful, `dcrctl` will return a transaction hash that can be used to watch the transaction on the official Decred Block Explorer.
+  If successful, `dcrctl` will return a transaction hash that can be used to watch the transaction on the official Decred-Next Block Explorer.
 
 ## Using the Block Explorer
 
 
 ### Overview
 
-  All blocks and transactions on the Decred blockchain are visible through the use of the block explorer, [dcrndata](https://github.com/Decred-Next/dcrndata).
+  All blocks and transactions on the Decred-Next blockchain are visible through the use of the block explorer, [dcrndata](https://github.com/Decred-Next/dcrndata).
 
   Public instances of dcrndata are available for the following networks:
 
@@ -367,26 +367,26 @@
 
   Blocks can be found by searching for their block height number, clicking on a `Height` value from the home page, or from their `BlockHash` value. Older blocks will have lower block numbers. The top half of a block overview shows relevant information about this specific block. This information includes: the block height, the block hash, and several key network parameters, described below:
 
-  | Option                   | Explanation                                                  |
-  | :----------------------- | :----------------------------------------------------------- |
-  | `Number of Transactions` | The number of standard transactions (DCR sent from one user to another). |
-  | `Height`                 | The height of the blockchain in which this block resides.    |
-  | `Block Reward`           | The amount of new DCR minted in this block.                  |
-  | `Timestamp`              | The time this block was created by a miner and was included in the blockchain. |
-  | `Merkle Root`            | A hash value of all the transaction hashes included in this block. |
-  | `Stake Root`             | A hash value of all the stake related transaction hashes in this block. This includes ticket purchases, votes, and ticket revocations. |
-  | `VoteBits`               | (1) Block was approved by proof-of-stake voters. (2) Block was vetoed by proof-of-stake voters and all non-stake transactions in the block were invalidated, along with the newly generated block reward for the proof-of-work miner and the Decred Treasury. |
-  | `Final State`            | The final state of the pseudo random number generator used for ticket selection. |
-  | `Voters`                 | The number of successful proof-of-stake votes cast in this block. The maximum value is 5. |
-  | `Fresh Stake`            | The number of stake ticket purchases confirmed in this block. |
-  | `Revocations`            | The number of tickets that failed to vote and were revoked.  |
-  | `PoolSize`               | The total number of active proof-of-stake tickets.           |
-  | `Difficulty`             | The proof-of-work network difficulty.                        |
-  | `SBits`                  | The price of one proof-of-stake ticket.                      |
-  | `Bits`                   | A compact version of the network difficulty at the time the block was mined. |
-  | `Size`                   | The size of the block (in bytes).                            |
-  | `Version`                | The version of the block.                                    |
-  | `Nonce`                  | The value used by a miner to find the correct solution for this block. |
+| Option                   | Explanation                                                  |
+| :----------------------- | :----------------------------------------------------------- |
+| `Number of Transactions` | The number of standard transactions (DCR sent from one user to another). |
+| `Height`                 | The height of the blockchain in which this block resides.    |
+| `Block Reward`           | The amount of new DCR minted in this block.                  |
+| `Timestamp`              | The time this block was created by a miner and was included in the blockchain. |
+| `Merkle Root`            | A hash value of all the transaction hashes included in this block. |
+| `Stake Root`             | A hash value of all the stake related transaction hashes in this block. This includes ticket purchases, votes, and ticket revocations. |
+| `VoteBits`               | (1) Block was approved by proof-of-stake voters. (2) Block was vetoed by proof-of-stake voters and all non-stake transactions in the block were invalidated, along with the newly generated block reward for the proof-of-work miner and the Decred-Next Treasury. |
+| `Final State`            | The final state of the pseudo random number generator used for ticket selection. |
+| `Voters`                 | The number of successful proof-of-stake votes cast in this block. The maximum value is 5. |
+| `Fresh Stake`            | The number of stake ticket purchases confirmed in this block. |
+| `Revocations`            | The number of tickets that failed to vote and were revoked.  |
+| `PoolSize`               | The total number of active proof-of-stake tickets.           |
+| `Difficulty`             | The proof-of-work network difficulty.                        |
+| `SBits`                  | The price of one proof-of-stake ticket.                      |
+| `Bits`                   | A compact version of the network difficulty at the time the block was mined. |
+| `Size`                   | The size of the block (in bytes).                            |
+| `Version`                | The version of the block.                                    |
+| `Nonce`                  | The value used by a miner to find the correct solution for this block. |
 
 ### Transactions
 
@@ -396,7 +396,7 @@
 
 #### Standard transactions
 
-  Here’s the information included in standard Decred transactions.
+  Here’s the information included in standard Decred-Next transactions.
 
   | Option              | Explanation                                             |
   | :------------------ | :------------------------------------------------------ |
@@ -406,7 +406,7 @@
   | `Mined Time`        | The time a miner included the transaction in a block.   |
   | `Included in Block` | The block number that the transaction became a part of. |
 
-  Note `Received Time`, `Mined Time`, and `Included in Block` will not have a value until a miner validates the transaction and includes it in a Decred block. After being confirmed in a block, the transaction is considered complete.
+  Note `Received Time`, `Mined Time`, and `Included in Block` will not have a value until a miner validates the transaction and includes it in a Decred-Next block. After being confirmed in a block, the transaction is considered complete.
 
 ------
 
