@@ -197,9 +197,36 @@ Voting choices can be set and changed at any time after a ticket is purchased. I
 Weeks or months could elapse between a ticket being purchased and it being called to vote. A ticket could be purchased before a voting agenda even exists.
 ---
 
+## MyDcrn ticket buying process
 
+1. **Open the myDcrn program and enter the ticket buying page**
+![image](./img/buy_ticket1.png "buy_ticket")
 
+2.**Enter the VSP website to register users**
+![image](./img/register_user.png "register_user")
 
+3.**Click the register button**
+![image](./img/click_register.png "click_register")
+
+4.**Enter the verification code and email address to send the registration email**
+
+5.**Enter the registered mailbox and click the registration link to complete the registration**
+
+6.**Log in the website**
+![image](./img/login_user.png "login_user")
+
+7.**Copy the wallet API key**
+![image](./img/wallet_key.png "wallet_key")
+
+8.**Paste it into myDcrn**
+![image](./img/to_mydcrn.png "to_mydcrn")
+
+9.**Mydcrn started buying tickets**
+![image](./img/p_buy_ticket.jpg "p_buy_ticket")
+
+10.**Click buy to buy tickets**
+![image](./img/buy_ok.jpg "buy_ok")
+![image](./img/show_ticket.jpg "show_ticket")
 
 
 
