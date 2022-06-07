@@ -7,17 +7,17 @@ Proof of Stake voting is central to Decred-Next’s governance. Decred-Next hold
 
 
 ## Overview
-Proof-of-Stake (PoS) voting is a form of Proof-of-Stake (PoS) security, but the way Decred integrates this as a complement to Proof-of-Work (PoW) mining gives it a distinctive set of roles and characteristics.
+Proof-of-Stake (PoS) voting is a form of Proof-of-Stake (PoS) security, but the way Decred-Next integrates this as a complement to Proof-of-Work (PoW) mining gives it a distinctive set of roles and characteristics.
 
 PoS voting serves a number of purposes:
-1. Allowing stakeholders to vote for or against proposed changes to the Decred blockchain. If stakeholders vote in support of a change, the chain will hard fork and the new feature becomes active automatically. More information on voting can be found in the Mainnet Voting Guide.
+1. Allowing stakeholders to vote for or against proposed changes to the Decred-Next blockchain. If stakeholders vote in support of a change, the chain will hard fork and the new feature becomes active automatically. More information on voting can be found in the Mainnet Voting Guide.
 2. Providing a mechanism for stakeholders to influence Proof-of-Work (PoW) miners. Stakeholders can vote to withhold a miner’s reward even if the block conforms to the consensus rules of the network. This allows stakeholders, in principle, to discourage problematic mining behavior such as mining empty blocks.
-3. For a block to be valid, it has to be signed by at least 3 of the 5 tickets that are called to vote in that block. This makes the Decred blockchain more robust to certain kinds of attack, such as those which rely on secret mining.
+3. For a block to be valid, it has to be signed by at least 3 of the 5 tickets that are called to vote in that block. This makes the Decred-Next blockchain more robust to certain kinds of attack, such as those which rely on secret mining.
 
 
 
 ## How Ticket Voting Works
-To participate in PoS voting, stakeholders lock some DCRN in return for a ticket. An individual stakeholder can purchase one or more tickets. The amount of DCRN locked, or Ticket Price, is adjusted dynamically every 144 blocks (about 12 hours). The current ticket price can be found in Decredniton or on dcrndata.dcrn.xyz. Every ticket owned gives its holder the ability to cast a single vote. Upon voting, each ticket returns a **small reward** plus the **original Ticket Price** of the ticket.
+To participate in PoS voting, stakeholders lock some DCRN in return for a ticket. An individual stakeholder can purchase one or more tickets. The amount of DCRN locked, or Ticket Price, is adjusted dynamically every 144 blocks (about 12 hours). The current ticket price can be found in MyDCRN or on data.dcrn.xyz. Every ticket owned gives its holder the ability to cast a single vote. Upon voting, each ticket returns a **small reward** plus the **original Ticket Price** of the ticket.
 
 Tickets are selected pseudorandomly according to a Poisson distribution. 
 
@@ -31,7 +31,7 @@ Every 144 blocks (about 12 hours), the stake difficulty algorithm calculates a n
 
 The **Ticket Price/Stake Difficulty** is the price you must pay for a ticket during a single 144 block window.
 
-The **Ticket Pool** is the total number of tickets in the Decred network.
+The **Ticket Pool** is the total number of tickets in the Decred-Next network.
 
 The **Ticket Fee** (ticketfee) is the fee that must be included in the ticket purchase to incentivize Proof-of-Work (PoW) miners to include that ticket in a new block. Ticket Fee usually refers to the DCRN/kB fee rate for a ticket purchase transaction. The Ticket Fee defaults to the minimum (0.0001 DCRN/kB), which is typically sufficient.
 
@@ -120,7 +120,7 @@ vsp reward
 ## Ticket Lifecycle
 Purchasing a ticket is quite simple (see below), but what happens to it after you buy it? A ticket on mainnet (testnet uses different parameters) will go through a few stages in its lifetime:
 
-1. You buy a ticket using a Decrediton or dcrnwallet wallet. The total cost of each single ticket transaction should be Ticket Price + Ticket Fee(ticketfee).
+1. You buy a ticket using a MyDCRN or dcrnwallet wallet. The total cost of each single ticket transaction should be Ticket Price + Ticket Fee(ticketfee).
 
 2. Your ticket enters the mempool. This is where your ticket waits to be mined by PoW miners. Only 20 fresh tickets are mined into each block.
 
@@ -172,7 +172,7 @@ The ticket price goes up or down according to the demand for tickets, and the nu
 The ticket price is always refunded, no matter if your ticket votes, misses or expires.
 ---
 3. **Can I cancel my ticket?**
-No. The fact that funds cannot be withdrawn is a key element in Decred’s PoS security and governance model. Having funds locked in tickets proves that ticket holders have “skin in the game” and are properly incentivized. Funds will be returned to the ticket holder’s wallet once the ticket has either voted or been revoked due to a missed or expired vote.
+No. The fact that funds cannot be withdrawn is a key element in Decred-Next’s PoS security and governance model. Having funds locked in tickets proves that ticket holders have “skin in the game” and are properly incentivized. Funds will be returned to the ticket holder’s wallet once the ticket has either voted or been revoked due to a missed or expired vote.
 ---
 4. **Is Proof-of-Stake (PoS) susceptible to large exchanges using their customers’ DCRN?**
 The amount of DCRN a person (or exchange) possesses doesn’t matter, only the number of tickets. Funds used to purchase tickets are locked until the ticket they purchased votes. This means that DCRN involved in PoS are effectively nontransferable. For an exchange to use their customers’ DCRN for voting, they would have to transfer them out of the wallets and lock them for up to 5 months. People would notice their balances change (DCRN locked in PoS will not show as spendable) and they would not be able to withdraw any funds so the exchange would suffer a large loss of liquidity.
@@ -185,8 +185,8 @@ Now the holder could wait a couple of days for the price to drop then start buyi
 Tickets for a block are chosen with a random distribution. To force a vote to go a certain way you would need 3 out of 5 votes for a given block which is 60%. Even with that huge expenditure of capital, they are less than half way there. And a vote isn’t decided on a single block so you would need 60% of 75% of blocks in the voting period.
 And THEN you still need the PoW miners to confirm the votes. If they think someone is trying to game the system, they can choose to invalidate blocks.
 So basically this is close to impossible, even if a single person has a HUGE percentage of DCRN.
-But then we come to the Voting Service Providers. VSPs, while not having access to any of their users’ funds, do have the ability to change votes on tickets assigned to them. This is why it is suggested that when joining a VSP, people don’t just go for the largest one. Decred is short for ‘decentralized credit’ so part of the spirit of PoS is ensuring that the VSPs don’t get too large in relation to the others. However, even the largest at almost 20% would still only get on average one vote per block.
-Decred was specifically designed to minimize impact from both large PoW mining pools and PoS VSPs as well as individuals (including developers) with large holdings.
+But then we come to the Voting Service Providers. VSPs, while not having access to any of their users’ funds, do have the ability to change votes on tickets assigned to them. This is why it is suggested that when joining a VSP, people don’t just go for the largest one. Decred-Next is short for ‘decentralized credit of next generation’ so part of the spirit of PoS is ensuring that the VSPs don’t get too large in relation to the others. However, even the largest at almost 20% would still only get on average one vote per block.
+Decred-Next was specifically designed to minimize impact from both large PoW mining pools and PoS VSPs as well as individuals (including developers) with large holdings.
 ---
 6. **What happens if less than 3 of the selected tickets vote on a block?**
 Miners do not start mining for the next block until at least 3 of the selected tickets vote on the current block. If a found block does not manage to get the selected votes, the block is simply orphaned by the next block another miner finds.
