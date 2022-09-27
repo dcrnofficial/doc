@@ -6,7 +6,7 @@
 ## Installation
 dcrninstall is the recommended method to install the Decred-next command line interface tools dcrnd, dcrnwallet, and dcrnctl.
 
-dcrninstall is an automatic installer and upgrader for the Decred-next software. The newest release can be found here: https://github.com/Decred-Next/dcrn-release/releases. Binaries are provided for Windows, macOS and Linux.
+dcrninstall is an automatic installer and upgrader for the Decred-next software. The newest release can be found here: https://github.com/dcrnofficial/binary-release/releases. Binaries are provided for Windows, macOS and Linux.
 
 
 ## Operating System Differences
